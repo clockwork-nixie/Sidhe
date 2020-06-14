@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Sidhe</title>   
+
+    <style>
+        body { font-family: Arial, Arial, Helvetica, sans-serif; margin: 0; padding: 0; }
+
+        .footer { background-color: grey; bottom: 0px; margin: 0; padding: 0; position: absolute; text-align: center; width: 100%; }
+        .hidden { display: none; }
+
+        .login-page { margin: 0; padding: 0; width: 100%; }
+        .login-box { background-color: aliceblue; border-radius: 0.5em; margin: 0 auto; padding: 1em; width: 13em; }
+        .login-line { margin: 5px 0; text-align: right; }
+        .login-buttons { margin: 15px 0 0 0; text-align: center; }       
+        .login-box input { width: 10em; }
+        .login-box label { font-size: smaller; width: 30em; }
+        
+        .main-page { margin: 0; padding: 0; width: 100%; }
+        .main-box { margin: 0 auto; width: 800px; }
+        .main-box .navbar { margin: 5px 0 5px 0; text-align: right; }
+
+        #response { width: 600px; height: 100px; margin: 10px 0 10px 0; overflow-y: scroll; }
+        #status { width: 300px; margin: 10px 0 10px 0; }
+    </style>
+
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.23.0/dist/phaser.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="loginPage" class="login-page hidden">
+        <div class="login-box">
+            <div class="login-line">
+                <label for="username">Username</label>
+                <input id="username" type="text" placeholder="..." value="foo" />
+            </div>
+            <div class="login-line">
+                <label for="username">Password</label>
+                <input id="password" type="password" placeholder="..." value="bar" />
+            </div>
+            <div class="login-buttons">
+                <button id="login">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainPage" class="main-page hidden">
+        <div class="main-box">
+            <div class="navbar"><button id="logout">Logout</button></div>
+            <div id="phaser"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        MY FOOTER
+    </div>
+
+    <script type="module" src="js/client.js" ></script>
+</body>
+</html>

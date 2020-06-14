@@ -1,0 +1,10 @@
+﻿{
+  "ClientReceiveBytes": 4096,
+  "ClientSendBytes": 4096,
+  "IsConsoleEnabled": true,
+  "IsHostApplication": true,
+  "IsHostLogin": true,
+  "LocalSessionPartitionCount": 1,
+  "WorldQueueCount": 1,
+  "WorldWorkersPerQueue": 1
+}
