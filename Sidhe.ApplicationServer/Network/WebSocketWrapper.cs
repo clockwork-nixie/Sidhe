@@ -22,7 +22,6 @@ namespace Sidhe.ApplicationServer.Network
         public Task Close(WebSocketCloseStatus status, string description, CancellationToken cancellationToken)
             => _socket.CloseAsync(status, description, cancellationToken);
 
-
         public void Dispose() => _socket.Dispose();
 
 

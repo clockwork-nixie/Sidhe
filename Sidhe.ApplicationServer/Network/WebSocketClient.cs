@@ -185,7 +185,7 @@ namespace Sidhe.ApplicationServer.Network
 
                                 var response = dispatch(request, session);
 
-                                if (response?.IsNecessary == true)
+                                if (response.HasContents())
                                 {
                                     await _socket.SendAsync(
                                         new ArraySegment<byte>(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(response))),

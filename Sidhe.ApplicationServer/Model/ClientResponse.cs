@@ -6,7 +6,5 @@ namespace Sidhe.ApplicationServer.Model
     {
         [JsonProperty("changes")] public ClientLocation[] Changes { get; set; }
         [JsonProperty("errorMessage")] public string ErrorMessage { get; set; }
-        
-        [JsonIgnore] public bool IsNecessary => (Changes?.Length ?? 0) > 0;
     }
 }

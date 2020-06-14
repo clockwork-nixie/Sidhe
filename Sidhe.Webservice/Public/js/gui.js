@@ -8,7 +8,12 @@ function phaserPreload(game) {
 function phaserCreate(game, state) {
     game.add.image(400, 300, 'sky');
 
-    state.cursors = game.input.keyboard.createCursorKeys();
+    state.keyboard = game.input.keyboard.addKeys({
+        up: "W",
+        down: "S",
+        left: "A",
+        right: "D"
+    });
     state.physics = game.physics;
     state.sprite = game.physics.add.image(state.x, state.y, 'star');
 
@@ -19,19 +24,19 @@ function phaserCreate(game, state) {
 
 
 function phaserUpdate(game, state) {
-    const cursors = state.cursors;
+    const keyboard = state.keyboard;
 
-    if (cursors.left.isDown && !cursors.right.isDown) {
+    if (keyboard.left.isDown && !keyboard.right.isDown) {
         state.sprite.setVelocityX(-160);
-    } else if (cursors.right.isDown && !cursors.left.isDown) {
+    } else if (keyboard.right.isDown && !keyboard.left.isDown) {
         state.sprite.setVelocityX(160);
     } else {
         state.sprite.setVelocityX(0);
     }
 
-    if (cursors.up.isDown && !cursors.down.isDown) {
+    if (keyboard.up.isDown && !keyboard.down.isDown) {
         state.sprite.setVelocityY(-160);
-    } else if (cursors.down.isDown && !cursors.up.isDown) {
+    } else if (keyboard.down.isDown && !keyboard.up.isDown) {
         state.sprite.setVelocityY(160);
     } else {
         state.sprite.setVelocityY(0);
